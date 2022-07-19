@@ -1,10 +1,10 @@
-###Description:
+### Description:
   ClickHouse to XLSX exporter
 
-###Usage:
+### Usage:
   chxlsxExportTool [options]
 
-###Options:
+### Options:
   --clickhouse-uri <clickhouse-uri>            ClickHouse URI protocol://hostname:port/database [default: http://localhost:8123/default]
   --clickhouse-user <clickhouse-user>          ClickHouse User [default: default]
   --clickhouse-password <clickhouse-password>  ClickHouse Password []
