@@ -22,3 +22,14 @@
   --version                                    Show version information
   
   -h, --help                               Show help and usage information
+
+### OS X users note:
+Application is not signed by Apple 3rd party developer certificate
+
+you may need to run the following (example for arm64 binary) 
+```
+chmod 755 chxslxExportTool_osx-arm64
+spctl --add chxslxExportTool_osx-arm64
+open chxslxExportTool_osx-arm64
+
+```
