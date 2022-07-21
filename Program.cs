@@ -8,7 +8,7 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 
-[assembly: System.Reflection.AssemblyVersion("1.0.*")]
+[assembly: System.Reflection.AssemblyVersion("1.0.1.*")]
 
 
 
@@ -83,6 +83,7 @@ rootCommand.SetHandler(
           sb.Username = chUser;
           sb.Protocol = chProtocol;
           sb.Database = chDatabase;
+          sb.Timeout = TimeSpan.FromMinutes(120);
           if (chPassword is not null)
           {
               sb.Password = chPassword;
@@ -215,7 +216,7 @@ rootCommand.SetHandler(
                   rowNum++;
                   if (rowNum % maxrows == 0)
                   {
-                      Console.WriteLine("\nWriting File: " + outputFileName+"_"+(rowNum/101).ToString() + ".xlsx");
+                      Console.WriteLine("\nWriting File: " + outputFileName+"_"+(rowNum/maxrows).ToString() + ".xlsx");
                       spreadsheetDocument = SpreadsheetDocument.Create(outputFileName+"_"+(rowNum/101).ToString() + ".xlsx", SpreadsheetDocumentType.Workbook);
                       workbookpart = spreadsheetDocument.AddWorkbookPart();
                       workbookpart.Workbook = new Workbook();
